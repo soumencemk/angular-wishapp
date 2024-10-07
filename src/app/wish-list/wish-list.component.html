@@ -4,18 +4,8 @@
 </div>
 }@else if (wishes.length > 0) {
 <ul class="list-group">
-    @for (item of wishes; track $index) {
-    <li class="list-group-item m-1">
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" (click)="toggleItem(item)"
-                    [checked]="item.isComplete" />
-                <label class="form-check-label" for="flexCheckDefault">
-                    {{ item.wishText }}
-                </label>
-            </label>
-        </div>
-    </li>
+    @for (wish of wishes; track $index) {
+    <app-wish-list-item [wishText]="wish.wishText" [(fullfilled)]="wish.isComplete"></app-wish-list-item>
     }
 </ul>
 }
