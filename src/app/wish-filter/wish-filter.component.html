@@ -1,0 +1,6 @@
+<select name="listFilter" class="form-select form-select-sm m-3" [(ngModel)]="listFilter"
+    (ngModelChange)="updateFilter($event)">
+    <option value="0">ALL</option>
+    <option value="1">COMPLETED</option>
+    <option value="2">INCOMPLETE</option>
+</select>
