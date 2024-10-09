@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WishItem } from '../../../shared/models/WishItem';
+import { EventService } from '../../../shared/services/EventService';
 
 @Component({
   selector: 'app-wish-list-item',
@@ -9,20 +11,23 @@ import { CommonModule } from '@angular/common';
   styleUrl: './wish-list-item.component.css',
 })
 export class WishListItemComponent {
-removeWish() {
-throw new Error('Method not implemented.');
-}
-  @Input() wishText!: string;
-  @Input() fullfilled!: boolean;
-  @Output() fullfilledChange = new EventEmitter<Boolean>();
+  constructor(private events: EventService) {}
+
+  @Input() wish!: WishItem;
 
   get cssClasses() {
     //return this.fullfilled ? ['strikeout', 'text-muted'] : [];
-    return { strikeout: this.fullfilled, 'text-muted': this.fullfilled };
+    return {
+      strikeout: this.wish.isComplete,
+      'text-muted': this.wish.isComplete,
+    };
   }
 
   toggleFullfill() {
-    this.fullfilled = !this.fullfilled;
-    this.fullfilledChange.emit(this.fullfilled);
+    this.wish.isComplete = !this.wish.isComplete;
+  }
+
+  removeWish() {
+    this.events.emit('removeWish', this.wish);
   }
 }

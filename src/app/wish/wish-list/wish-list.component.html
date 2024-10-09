@@ -5,7 +5,7 @@
 }@else if (wishes.length > 0) {
 <ul class="list-group">
     @for (wish of wishes; track $index) {
-    <app-wish-list-item [wishText]="wish.wishText" [(fullfilled)]="wish.isComplete"></app-wish-list-item>
+    <app-wish-list-item [wish]="wish"></app-wish-list-item>
     }
 </ul>
 }

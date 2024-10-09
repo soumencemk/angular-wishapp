@@ -2,30 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WishItem } from '../shared/models/WishItem';
 import { FormsModule } from '@angular/forms';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
-import { WishFilterComponent } from './wish-filter/wish-filter.component';
-
+import { EventService } from '../shared/services/EventService';
+import { HttpClientModule } from '@angular/common/http';
+import { WishService } from './wish/wish.service';
+import { WishModule } from './wish/wish.module';
+import { WishComponent } from "./wish/wish.component";
+import { ContactComponent } from "./contact/contact.component";
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
     FormsModule,
-    WishListComponent,
-    AddWishFormComponent,
-    WishFilterComponent,
-  ],
+    HttpClientModule,
+    WishModule,
+    WishComponent,
+    ContactComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {   
-
-  filter: any;
-
-  items: WishItem[] = [
-    new WishItem('Learn Angular'),
-    new WishItem('Drink Coffee', true),
-    new WishItem('Get a job'),
-  ];
+export class AppComponent {
+  
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { WishItem } from '../../shared/models/WishItem';
 import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
+import { WishItem } from '../../../shared/models/WishItem';
 
 @Component({
   selector: 'app-wish-list',

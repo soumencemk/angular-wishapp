@@ -1,0 +1,11 @@
+[
+  { "wishText": "Repair bike", "isComplete": true },
+  { "wishText": "Plan a trip", "isComplete": true },
+  { "wishText": "Play guitar", "isComplete": false },
+  { "wishText": "Practice coding", "isComplete": true },
+  { "wishText": "Go shopping", "isComplete": false },  
+  { "wishText": "Study for exam", "isComplete": false },
+  { "wishText": "Practice coding", "isComplete": false },
+  { "wishText": "Organize closet", "isComplete": true },
+  { "wishText": "Organize closet", "isComplete": true }
+]

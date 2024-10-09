@@ -1,16 +1,2 @@
-<div class="container-sm">
-    <nav class="navbar bg-body-tertiary align-center">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 display text-primary">WISHLIST APPLICATION</span>
-        </div>
-    </nav>
-    <app-add-wish-form (addWish)="items.push($event)"></app-add-wish-form>    
-    <div class="card m-2">        
-        <div class="card-header display">            
-            <app-wish-filter [(filter)]="filter"></app-wish-filter>
-        </div>
-        <div class="card-body">
-            <app-wish-list [wishes]="items.filter(filter)"></app-wish-list>
-        </div>
-    </div>
-</div>
+<!-- <app-wish></app-wish> -->
+ <app-contact></app-contact>
